@@ -17,6 +17,7 @@ class App extends Component {
     this.setState({
       meals: [
         {
+          id: 1,
           name: "Corned Beef & Cabbage",
           url: "http://www.google.com",
           ingredients: [
@@ -28,6 +29,7 @@ class App extends Component {
           ]
         },
         {
+          id: 2,
           name: "Pesto Pasta",
           url: "http://www.apple.com",
           ingredients: ["Pasta", "Pesto", "Mozzarella", "Sun dried tomatoes"]

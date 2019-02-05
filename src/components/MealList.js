@@ -11,7 +11,7 @@ class MealList extends Component {
               name={recipe.name}
               ingredients={recipe.ingredients}
               url={recipe.url}
-              key={recipe.name}
+              key={recipe.id}
             />
           );
         })}
