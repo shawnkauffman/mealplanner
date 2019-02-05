@@ -41,7 +41,7 @@ class App extends Component {
   render() {
     return (
       <main>
-        <Header />
+        <Header meals={this.state.meals} />
         <MealList meals={this.state.meals} />
         <Footer />
       </main>
