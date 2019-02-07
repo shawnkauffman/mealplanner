@@ -33,6 +33,30 @@ class App extends Component {
           name: "Pesto Pasta",
           url: "http://www.apple.com",
           ingredients: ["Pasta", "Pesto", "Mozzarella", "Sun dried tomatoes"]
+        },
+        {
+          id: 3,
+          name: "Pizza",
+          url: "http://www.apple.com",
+          ingredients: ["Pasta", "Pesto", "Mozzarella", "Sun dried tomatoes"]
+        },
+        {
+          id: 4,
+          name: "Sweet Potato Tacos",
+          url: "http://www.apple.com",
+          ingredients: ["Pasta", "Pesto", "Mozzarella", "Sun dried tomatoes"]
+        },
+        {
+          id: 5,
+          name: "Tofu and Rice",
+          url: "http://www.apple.com",
+          ingredients: ["Pasta", "Pesto", "Mozzarella", "Sun dried tomatoes"]
+        },
+        {
+          id: 6,
+          name: "Enchiladas",
+          url: "http://www.apple.com",
+          ingredients: ["Pasta", "Pesto", "Mozzarella", "Sun dried tomatoes"]
         }
       ]
     });
@@ -41,6 +65,8 @@ class App extends Component {
   render() {
     return (
       <main>
+        <div className="overlay" />
+        <div id="modal" />
         <Header meals={this.state.meals} />
         <MealList meals={this.state.meals} />
         <Footer />

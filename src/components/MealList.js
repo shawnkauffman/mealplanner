@@ -5,7 +5,7 @@ class MealList extends Component {
   render() {
     return (
       <ul className="planner">
-        {this.props.meals.map(recipe => {
+        {this.props.meals.slice(0, 5).map(recipe => {
           return (
             <Meal
               name={recipe.name}
