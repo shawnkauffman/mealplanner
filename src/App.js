@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { render } from "react-dom";
+import ReactDOM from "react-dom";
 import "./App.scss";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -65,8 +65,7 @@ class App extends Component {
   render() {
     return (
       <main>
-        <div className="overlay" />
-        <div id="modal" />
+        <div id="modal" className="modal" />
         <Header meals={this.state.meals} />
         <MealList meals={this.state.meals} />
         <Footer />
@@ -75,4 +74,4 @@ class App extends Component {
   }
 }
 
-render(<App />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));

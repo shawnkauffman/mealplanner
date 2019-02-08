@@ -30,6 +30,7 @@ class Header extends Component {
   }
 
   openAddNewMealForm() {
+    document.getElementById("modal").classList.add("active");
     render(<AddNewMealForm />, document.getElementById("modal"));
   }
 
@@ -46,13 +47,13 @@ class Header extends Component {
               <a href="#">Create New Meal</a>
             </li>
             <li>
-              <a
-                href="#"
+              <button
+                type="button"
                 onClick={this.openAddNewMealForm}
                 className="generate-btn"
               >
                 Generate Meal Plan
-              </a>
+              </button>
             </li>
           </ul>
         </nav>

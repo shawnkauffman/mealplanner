@@ -1,19 +1,42 @@
-.overlay {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.8);
-  //display: none;
+.modal {
+  &:before {
+    content: "";
+    display: none;
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+  }
+
+  &.active:before {
+    display: block;
+  }
 }
 
-.modal {
-  position: absolute;
-  top: 10%;
-  left: 10%;
+.modal--inner {
+  transform: translate(-50%, -50%);
   background: #fff;
-  width: 40vw;
-  height: 40vw;
-  border-radius: 20px;
+  top: 50%;
+  left: 50%;
+  z-index: 99;
+  position: fixed;
+  border-radius: 25px;
+  padding: 40px;
+  transition: transform 0.3s ease-out;
+}
+
+.modal--close-button {
+  cursor: pointer;
+  color: #aaa;
+  font-size: 24px;
+  text-decoration: none;
+  padding: 5px;
+  position: absolute;
+  right: 7px;
+  top: 0;
+  background: initial;
+  border: 0;
 }
