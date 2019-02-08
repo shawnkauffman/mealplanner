@@ -5,13 +5,13 @@ class MealList extends Component {
   render() {
     return (
       <ul className="planner">
-        {this.props.meals.slice(0, 5).map(recipe => {
+        {this.props.meals.slice(0, 5).map(meal => {
           return (
             <Meal
-              name={recipe.name}
-              ingredients={recipe.ingredients}
-              url={recipe.url}
-              key={recipe.id}
+              name={meal.name}
+              ingredients={meal.ingredients}
+              url={meal.url}
+              key={meal.id}
             />
           );
         })}

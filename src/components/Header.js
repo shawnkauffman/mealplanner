@@ -37,11 +37,13 @@ class Header extends Component {
   render() {
     return (
       <header>
-        <h1>meal planner</h1>
+        <a href="/" className="logo">
+          meal planner
+        </a>
         <nav>
           <ul>
             <li>
-              <a href="#">Meals</a>
+              <a href="/meals/">Meals</a>
             </li>
             <li>
               <a href="#">Create New Meal</a>

@@ -5,7 +5,10 @@ class Meal extends Component {
     return (
       <li>
         <div className="meta">
-          Monday <a href={this.props.url}>View Recipe</a>
+          <span>Monday</span>
+          <a href={this.props.url} target="_blank">
+            View Recipe
+          </a>
         </div>
         <h2>{this.props.name}</h2>
         <ul className="recipe-list">

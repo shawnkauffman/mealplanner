@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
+import { Router } from "@reach/router";
 import "./App.scss";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import MealList from "./components/MealList";
+import DisplayAllMeals from "./components/DisplayAllMeals";
 
 class App extends Component {
   constructor() {
@@ -67,7 +69,10 @@ class App extends Component {
       <main>
         <div id="modal" className="modal" />
         <Header meals={this.state.meals} />
-        <MealList meals={this.state.meals} />
+        <Router>
+          <MealList path="/" meals={this.state.meals} />
+          <DisplayAllMeals path="/meals/" meals={this.state.meals} />
+        </Router>
         <Footer />
       </main>
     );

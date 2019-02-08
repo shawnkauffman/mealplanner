@@ -15,10 +15,16 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-h1 {
+a.logo {
   font-size: 20px;
   font-weight: bold;
   color: #db1604;
+}
+
+h1 {
+  font-size: 42px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 h2 {
@@ -35,17 +41,19 @@ header {
   background: #ececec;
 }
 
-nav ul {
-  display: flex;
-  align-items: baseline;
-}
+nav {
+  ul {
+    display: flex;
+    align-items: baseline;
 
-nav li {
-  margin: 0 10px;
-}
+    li {
+      margin: 0 15px;
 
-nav li:last-of-type {
-  margin-right: 0;
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
 }
 
 .generate-btn {
@@ -65,78 +73,76 @@ ul.planner {
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 20px;
   margin: 20px;
-}
 
-ul.planner > li {
-  padding: 20px 20px 20px 0;
-  border-right: 1px dashed #ececec;
-}
+  @media (max-width: 460px) {
+    grid-template-columns: 1fr;
+  }
 
-ul.planner a {
-  font-size: 14px;
-  color: #666;
-}
+  & > li {
+    padding: 20px 20px 20px 0;
+    border-right: 1px dashed #ececec;
 
-ul.planner > li.empty .meta {
-  justify-content: center;
-}
+    @media (max-width: 460px) {
+      padding: 20px 20px 20px 0;
+      border-right: 0;
+    }
 
-ul.planner > li:last-of-type {
-  border-right: 0;
-}
+    &.empty .meta {
+      justify-content: center;
+    }
 
-.meta {
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  color: #666;
+    &:last-of-type {
+      border-right: 0;
+    }
+  }
+
+  a {
+    font-size: 14px;
+    color: #666;
+  }
+
+  .meta {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    color: #666;
+  }
+
+  .add-meal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    outline: none;
+
+    &::after {
+      width: 73px;
+      content: "+";
+      background: #ececec;
+      border-radius: 50%;
+      color: #fff;
+      font-size: 72px;
+      text-align: center;
+    }
+  }
 }
 
 ul.recipe-list {
   list-style-type: circle;
   margin-left: 20px;
-}
 
-.recipe-list li {
-  margin: 10px 0;
-  font-weight: 400;
-  font-size: 18px;
-}
-
-.add-meal {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  outline: none;
-}
-
-.add-meal::after {
-  width: 73px;
-  content: "+";
-  background: #ececec;
-  border-radius: 50%;
-  color: #fff;
-  font-size: 72px;
-  text-align: center;
+  li {
+    margin: 10px 0;
+    font-weight: 400;
+    font-size: 18px;
+  }
 }
 
 footer {
   text-align: center;
   font-size: 14px;
   color: #666;
-}
-
-@media (max-width: 460px) {
-  ul.planner {
-    grid-template-columns: 1fr;
-  }
-
-  ul.planner > li {
-    padding: 20px 20px 20px 0;
-    border-right: 0;
-  }
 }
