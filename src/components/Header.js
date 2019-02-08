@@ -3,6 +3,12 @@ import { render } from "react-dom";
 import AddNewMealForm from "./AddNewMealForm";
 
 class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.openAddNewMealForm = this.openAddNewMealForm.bind(this);
+    this.shuffle = this.shuffle.bind(this);
+  }
+
   shuffle(array) {
     var currentIndex = array.length,
       temporaryValue,
@@ -23,15 +29,11 @@ class Header extends Component {
     return array;
   }
 
-  handleGenerateMealsButton(e) {
-    e.preventDefault();
-
-    const newMeals = this.shuffle(this.props.meals);
-  }
-
   openAddNewMealForm() {
     document.getElementById("modal").classList.add("active");
     render(<AddNewMealForm />, document.getElementById("modal"));
+
+    const newMeals = this.shuffle(this.props.meals);
   }
 
   render() {

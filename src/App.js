@@ -8,8 +8,8 @@ import MealList from "./components/MealList";
 import DisplayAllMeals from "./components/DisplayAllMeals";
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       meals: []
     };
