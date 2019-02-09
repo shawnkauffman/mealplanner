@@ -9,6 +9,11 @@ a:visited {
   color: #5d2810;
 }
 
+button {
+  background: inherit;
+  border: 0;
+}
+
 body {
   color: #2b2b2b;
   font-size: 16px;
@@ -48,6 +53,13 @@ nav {
 
     li {
       margin: 0 15px;
+
+      button {
+        font-size: 16px;
+        cursor: pointer;
+        color: #5d2810;
+        outline: none;
+      }
 
       &:last-of-type {
         margin-right: 0;
