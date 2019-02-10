@@ -1,6 +1,4 @@
 .modal {
-  transition: all 0.4s ease;
-
   &:before {
     content: "";
     display: none;
@@ -11,7 +9,6 @@
     right: 0;
     bottom: 0;
     z-index: 10;
-    transition: all 0.4s ease;
   }
 
   &.active:before {
