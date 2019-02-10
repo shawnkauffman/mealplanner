@@ -2,10 +2,40 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
 class AddNewMealForm extends Component {
+  constructor() {
+    super();
+    this.state = {
+      newMealName: "",
+      newMealUrl: "",
+      newMealIngredients: ""
+    };
+    this.handleNewMealName = this.handleNewMealName.bind(this);
+    this.handleNewMealUrl = this.handleNewMealUrl.bind(this);
+    this.handleNewMealIngredients = this.handleNewMealIngredients.bind(this);
+  }
+
   closeAddNewMealForm() {
     const modal = document.getElementById("modal");
     ReactDOM.unmountComponentAtNode(modal);
     modal.classList.remove("active");
+  }
+
+  handleNewMealName(event) {
+    this.setState({
+      newMealName: event.target.value
+    });
+  }
+
+  handleNewMealUrl(event) {
+    this.setState({
+      newMealUrl: event.target.value
+    });
+  }
+
+  handleNewMealIngredients(event) {
+    this.setState({
+      newMealIngredients: event.target.value
+    });
   }
 
   handleSubmit(event) {
@@ -24,9 +54,23 @@ class AddNewMealForm extends Component {
           &times;
         </button>
         <form onSubmit={this.handleSubmit}>
-          <input type="text" placeholder="Name" />
-          <input type="text" placeholder="URL" />
-          <input type="text" placeholder="Ingredients" />
+          <input
+            type="text"
+            placeholder="Name"
+            onChange={this.handleNewMealName}
+            value={this.state.newMealName}
+          />
+          <input
+            type="text"
+            onChange={this.handleNewMealUrl}
+            placeholder="Url"
+            value={this.state.newMealUrl}
+          />
+          <textarea
+            placeholder="Ingredients"
+            onChange={this.handleNewMealIngredients}
+            value={this.state.newMealIngredients}
+          />
           <button type="submit">Add Meal</button>
         </form>
       </div>
