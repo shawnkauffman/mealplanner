@@ -21,7 +21,7 @@ class Header extends Component {
             </li>
             <li>
               <button type="button" onClick={this.openAddNewMealForm}>
-                Create New Meal
+                Add A Meal
               </button>
             </li>
             <li>
@@ -30,7 +30,7 @@ class Header extends Component {
                 onClick={this.props.generateNewMealPlan}
                 className="generate-btn"
               >
-                Generate Meal Plan
+                Generate New Meal Plan
               </button>
             </li>
           </ul>

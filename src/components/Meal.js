@@ -5,7 +5,6 @@ class Meal extends Component {
     return (
       <li>
         <div className="meta">
-          <span>Monday</span>
           <a href={this.props.url} target="_blank">
             View Recipe
           </a>
