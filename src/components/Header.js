@@ -1,13 +1,6 @@
 import React, { Component } from "react";
-import { render } from "react-dom";
-import AddNewMealForm from "./AddNewMealForm";
 
 class Header extends Component {
-  openAddNewMealForm() {
-    document.getElementById("modal").classList.add("active");
-    render(<AddNewMealForm />, document.getElementById("modal"));
-  }
-
   render() {
     return (
       <header>
@@ -20,7 +13,7 @@ class Header extends Component {
               <a href="/meals/">Meals</a>
             </li>
             <li>
-              <button type="button" onClick={this.openAddNewMealForm}>
+              <button type="button" onClick={this.props.openAddNewMealForm}>
                 Add A Meal
               </button>
             </li>

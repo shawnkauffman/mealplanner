@@ -4,11 +4,7 @@ import ReactDOM from "react-dom";
 class AddNewMealForm extends Component {
   constructor() {
     super();
-    this.state = {
-      newMealName: "",
-      newMealUrl: "",
-      newMealIngredients: ""
-    };
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleNewMealName = this.handleNewMealName.bind(this);
     this.handleNewMealUrl = this.handleNewMealUrl.bind(this);
     this.handleNewMealIngredients = this.handleNewMealIngredients.bind(this);
@@ -58,18 +54,15 @@ class AddNewMealForm extends Component {
             type="text"
             placeholder="Name"
             onChange={this.handleNewMealName}
-            value={this.state.newMealName}
           />
           <input
             type="text"
             onChange={this.handleNewMealUrl}
-            placeholder="Url"
-            value={this.state.newMealUrl}
+            placeholder="Url (http://)"
           />
           <textarea
-            placeholder="Ingredients"
+            placeholder="Ingredients (separated by comma)"
             onChange={this.handleNewMealIngredients}
-            value={this.state.newMealIngredients}
           />
           <button type="submit">Add Meal</button>
         </form>
