@@ -14,6 +14,7 @@ class App extends Component {
     this.state = {
       meals: []
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.openAddNewMealForm = this.openAddNewMealForm.bind(this);
     this.generateNewMealPlan = this.generateNewMealPlan.bind(this);
   }
@@ -67,10 +68,19 @@ class App extends Component {
     });
   }
 
+  handleSubmit(event) {
+    event.preventDefault();
+
+    console.log(this.state);
+  }
+
   openAddNewMealForm() {
     document.getElementById("modal").classList.add("active");
     ReactDOM.render(
-      <AddNewMealForm meals={this.state.meals} />,
+      <AddNewMealForm
+        handleSubmit={this.handleSubmit}
+        meals={this.state.meals}
+      />,
       document.getElementById("modal")
     );
   }
