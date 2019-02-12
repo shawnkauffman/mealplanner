@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Karla:400,400i,700,700i");
 @import url("https://fonts.googleapis.com/css?family=Rubik:400,400i,500,500i,700,700i");
 @import "sass/partials/reset";
+@import "sass/partials/variables";
 @import "sass/partials/modal";
 
 * {
@@ -11,11 +12,11 @@ a:link,
 a:active,
 a:visited {
   text-decoration: none;
-  color: #e00;
+  color: $textLink;
   transition: all 0.3s ease;
 
   &:hover {
-    color: darken(#e00, 15%);
+    color: darken($textLink, 15%);
   }
 }
 
@@ -25,8 +26,8 @@ button {
 }
 
 body {
-  background: #fafafa;
-  color: #2b2b2b;
+  background: $backgroundLight;
+  color: $textDark;
   font-size: 14px;
   font-family: "Karla", sans-serif;
 }
@@ -70,11 +71,11 @@ nav {
       button {
         font-size: 16px;
         cursor: pointer;
-        color: #ff2222;
+        color: $textLink;
         outline: none;
 
         &:hover {
-          color: darken(#ff2222, 15%);
+          color: darken($textLink, 15%);
         }
       }
 
@@ -86,20 +87,20 @@ nav {
 }
 
 .generate-btn {
-  background: #ff2222;
+  background: $textLink;
   text-align: center;
   padding: 10px 20px;
   border-radius: 40px;
   font-size: 16px;
-  color: #fff;
+  color: $white;
   border: 0;
   cursor: pointer;
   outline: none;
   transition: all 0.3s ease;
 
   &:hover {
-    color: #fff;
-    background: darken(#ff2222, 15%);
+    color: $white;
+    background: darken($textLink, 15%);
   }
 }
 
@@ -117,7 +118,7 @@ ul.planner {
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-    background: #fff;
+    background: $white;
 
     &.empty .meta {
       justify-content: center;
@@ -138,25 +139,6 @@ ul.planner {
     font-size: 16px;
     font-weight: 500;
     margin-bottom: 15px;
-    color: #e00;
-  }
-
-  .add-meal {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    outline: none;
-
-    &::after {
-      width: 73px;
-      content: "+";
-      background: #ececec;
-      border-radius: 50%;
-      color: #fff;
-      font-size: 72px;
-      text-align: center;
-    }
   }
 }
 
@@ -174,7 +156,6 @@ ul.recipe-list {
 footer {
   text-align: center;
   font-size: 14px;
-  color: #666;
 }
 
 form {
@@ -183,7 +164,7 @@ form {
     width: 100%;
     margin-bottom: 10px;
     border-radius: 10px;
-    border: 1px solid #c3c3c3;
+    border: 1px solid $inputBorder;
     padding: 10px 15px;
     font-size: 14px;
   }
@@ -193,20 +174,20 @@ form {
   }
 
   button {
-    background: #ff2222;
+    background: $textLink;
     text-align: center;
     padding: 10px 20px;
     border-radius: 40px;
     font-size: 16px;
-    color: #fff;
+    color: $white;
     border: 0;
     cursor: pointer;
     outline: none;
     transition: all 0.3s ease;
 
     &:hover {
-      color: #fff;
-      background: darken(#ff2222, 15%);
+      color: $white;
+      background: darken($textLink, 15%);
     }
   }
 }
