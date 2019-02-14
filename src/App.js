@@ -14,73 +14,105 @@ class App extends Component {
     this.state = {
       meals: []
     };
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.addMeal = this.addMeal.bind(this);
     this.openAddNewMealForm = this.openAddNewMealForm.bind(this);
     this.generateNewMealPlan = this.generateNewMealPlan.bind(this);
   }
 
   componentDidMount() {
+    const meals =
+      typeof localStorage["meals"] !== "undefined"
+        ? JSON.parse(localStorage.getItem("meals"))
+        : [
+            {
+              id: 1,
+              name: "Corned Beef & Cabbage",
+              url: "http://www.google.com",
+              ingredients: [
+                "corned beef",
+                "cabbage",
+                "vegetable broth",
+                "carrots",
+                "potatoes"
+              ]
+            },
+            {
+              id: 2,
+              name: "Pesto Pasta",
+              url: "http://www.apple.com",
+              ingredients: [
+                "Pasta",
+                "Pesto",
+                "Mozzarella",
+                "Sun dried tomatoes"
+              ]
+            },
+            {
+              id: 3,
+              name: "Pizza",
+              url: "http://www.apple.com",
+              ingredients: [
+                "Pasta",
+                "Pesto",
+                "Mozzarella",
+                "Sun dried tomatoes"
+              ]
+            },
+            {
+              id: 4,
+              name: "Sweet Potato Tacos",
+              url: "http://www.apple.com",
+              ingredients: [
+                "Pasta",
+                "Pesto",
+                "Mozzarella",
+                "Sun dried tomatoes"
+              ]
+            },
+            {
+              id: 5,
+              name: "Tofu and Rice",
+              url: "http://www.apple.com",
+              ingredients: [
+                "Pasta",
+                "Pesto",
+                "Mozzarella",
+                "Sun dried tomatoes"
+              ]
+            },
+            {
+              id: 6,
+              name: "Enchiladas",
+              url: "http://www.apple.com",
+              ingredients: [
+                "Pasta",
+                "Pesto",
+                "Mozzarella",
+                "Sun dried tomatoes"
+              ]
+            }
+          ];
+
     this.setState({
-      meals: [
-        {
-          id: 1,
-          name: "Corned Beef & Cabbage",
-          url: "http://www.google.com",
-          ingredients: [
-            "corned beef",
-            "cabbage",
-            "vegetable broth",
-            "carrots",
-            "potatoes"
-          ]
-        },
-        {
-          id: 2,
-          name: "Pesto Pasta",
-          url: "http://www.apple.com",
-          ingredients: ["Pasta", "Pesto", "Mozzarella", "Sun dried tomatoes"]
-        },
-        {
-          id: 3,
-          name: "Pizza",
-          url: "http://www.apple.com",
-          ingredients: ["Pasta", "Pesto", "Mozzarella", "Sun dried tomatoes"]
-        },
-        {
-          id: 4,
-          name: "Sweet Potato Tacos",
-          url: "http://www.apple.com",
-          ingredients: ["Pasta", "Pesto", "Mozzarella", "Sun dried tomatoes"]
-        },
-        {
-          id: 5,
-          name: "Tofu and Rice",
-          url: "http://www.apple.com",
-          ingredients: ["Pasta", "Pesto", "Mozzarella", "Sun dried tomatoes"]
-        },
-        {
-          id: 6,
-          name: "Enchiladas",
-          url: "http://www.apple.com",
-          ingredients: ["Pasta", "Pesto", "Mozzarella", "Sun dried tomatoes"]
-        }
-      ]
+      meals: meals
     });
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
+  addMeal(newMeal) {
+    const meals = this.state.meals;
 
-    console.log(this.state);
+    meals.push(newMeal);
+    localStorage.setItem("meals", JSON.stringify(meals));
+
+    this.setState({
+      meals: meals
+    });
   }
 
   openAddNewMealForm() {
     document.getElementById("modal").classList.add("active");
     ReactDOM.render(
-      <AddNewMealForm
-        handleSubmit={this.handleSubmit}
-        meals={this.state.meals}
-      />,
+      <AddNewMealForm addMeal={this.addMeal} meals={this.state.meals} />,
       document.getElementById("modal")
     );
   }
@@ -119,10 +151,12 @@ class App extends Component {
           generateNewMealPlan={this.generateNewMealPlan}
           openAddNewMealForm={this.openAddNewMealForm}
         />
-        <Router>
-          <MealList path="/" meals={this.state.meals} />
-          <DisplayAllMeals path="/meals/" meals={this.state.meals} />
-        </Router>
+        <section>
+          <Router>
+            <MealList path="/" meals={this.state.meals} />
+            <DisplayAllMeals path="/meals/" meals={this.state.meals} />
+          </Router>
+        </section>
         <Footer />
       </main>
     );

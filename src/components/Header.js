@@ -10,7 +10,7 @@ class Header extends Component {
         <nav>
           <ul>
             <li>
-              <a href="/meals/">Meals</a>
+              <a href="/meals/">My Meals</a>
             </li>
             <li>
               <button type="button" onClick={this.props.openAddNewMealForm}>
