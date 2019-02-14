@@ -119,6 +119,7 @@ class App extends Component {
 
   generateNewMealPlan() {
     const newMeals = this.shuffle(this.state.meals);
+    localStorage.setItem("meals", JSON.stringify(newMeals));
     this.setState({ meals: newMeals });
   }
 

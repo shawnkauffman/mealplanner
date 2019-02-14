@@ -10,7 +10,7 @@ class Meal extends Component {
           </a>
         </div>
         <h2>{this.props.name}</h2>
-        <ul className="recipe-list">
+        <ul className="ingredient-list">
           {this.props.ingredients.map(item => {
             return <li key={item}>{item}</li>;
           })}
