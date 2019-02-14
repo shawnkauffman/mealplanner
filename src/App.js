@@ -49,47 +49,27 @@ class App extends Component {
             },
             {
               id: 3,
-              name: "Pizza",
+              name: "Tacos",
               url: "http://www.apple.com",
-              ingredients: [
-                "Pasta",
-                "Pesto",
-                "Mozzarella",
-                "Sun dried tomatoes"
-              ]
+              ingredients: ["Tortillas", "Beef", "Pico de gallo", "Onions"]
             },
             {
               id: 4,
-              name: "Sweet Potato Tacos",
+              name: "Pizza",
               url: "http://www.apple.com",
               ingredients: [
-                "Pasta",
-                "Pesto",
-                "Mozzarella",
-                "Sun dried tomatoes"
+                "Dough",
+                "Sauce",
+                "Cheese",
+                "Pepperoni",
+                "Mushrooms"
               ]
             },
             {
               id: 5,
-              name: "Tofu and Rice",
+              name: "Tofu, Rice & Broccoli",
               url: "http://www.apple.com",
-              ingredients: [
-                "Pasta",
-                "Pesto",
-                "Mozzarella",
-                "Sun dried tomatoes"
-              ]
-            },
-            {
-              id: 6,
-              name: "Enchiladas",
-              url: "http://www.apple.com",
-              ingredients: [
-                "Pasta",
-                "Pesto",
-                "Mozzarella",
-                "Sun dried tomatoes"
-              ]
+              ingredients: ["Tofu", "Brown Rice", "Soy Sauce"]
             }
           ];
 
