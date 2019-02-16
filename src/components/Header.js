@@ -13,7 +13,7 @@ class Header extends Component {
               <a href="/meals/">My Meals</a>
             </li>
             <li>
-              <button type="button" onClick={this.props.openAddNewMealForm}>
+              <button type="button" onClick={this.props.openAddMealForm}>
                 Add A Meal
               </button>
             </li>

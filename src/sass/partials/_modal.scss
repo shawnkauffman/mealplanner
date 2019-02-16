@@ -26,6 +26,10 @@
   border-radius: 10px;
   padding: 40px;
   transition: transform 0.3s ease-out;
+
+  h1 {
+    margin-top: 0;
+  }
 }
 
 .modal--close-button {

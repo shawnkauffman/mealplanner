@@ -6,7 +6,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import MealList from "./components/MealList";
 import DisplayAllMeals from "./components/DisplayAllMeals";
-import AddNewMealForm from "./components/AddNewMealForm";
+import AddMeal from "./components/AddMeal";
 
 class App extends Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class App extends Component {
       meals: []
     };
     this.addMeal = this.addMeal.bind(this);
-    this.openAddNewMealForm = this.openAddNewMealForm.bind(this);
+    this.openAddMealForm = this.openAddMealForm.bind(this);
     this.generateNewMealPlan = this.generateNewMealPlan.bind(this);
   }
 
@@ -89,10 +89,10 @@ class App extends Component {
     });
   }
 
-  openAddNewMealForm() {
+  openAddMealForm() {
     document.getElementById("modal").classList.add("active");
     ReactDOM.render(
-      <AddNewMealForm addMeal={this.addMeal} meals={this.state.meals} />,
+      <AddMeal addMeal={this.addMeal} meals={this.state.meals} />,
       document.getElementById("modal")
     );
   }
@@ -130,7 +130,7 @@ class App extends Component {
         <Header
           meals={this.state.meals}
           generateNewMealPlan={this.generateNewMealPlan}
-          openAddNewMealForm={this.openAddNewMealForm}
+          openAddMealForm={this.openAddMealForm}
         />
         <section>
           <Router>

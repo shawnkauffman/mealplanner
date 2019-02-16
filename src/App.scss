@@ -12,11 +12,11 @@ a:link,
 a:active,
 a:visited {
   text-decoration: none;
-  color: $textLink;
+  color: $textDark;
   transition: all 0.3s ease;
 
   &:hover {
-    color: darken($textLink, 15%);
+    color: darken($textDark, 15%);
   }
 }
 
@@ -26,7 +26,6 @@ button {
 }
 
 body {
-  background: $backgroundLight;
   color: $textDark;
   font-size: 14px;
   font-family: "Karla", sans-serif;
@@ -56,11 +55,11 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
+  padding: 15px 40px;
 }
 
 section {
-  padding: 0 20px;
+  padding: 0 40px;
 }
 
 nav {
@@ -73,13 +72,14 @@ nav {
 
       a,
       button {
-        font-size: 16px;
+        font-size: 15px;
         cursor: pointer;
-        color: $textLink;
+        color: $textDark;
         outline: none;
+        font-family: arial, sans-serif;
 
         &:hover {
-          color: darken($textLink, 15%);
+          color: darken($textDark, 15%);
         }
       }
 
@@ -90,21 +90,18 @@ nav {
   }
 }
 
-.generate-btn {
-  background: $textLink;
-  text-align: center;
-  padding: 10px 20px;
-  border-radius: 40px;
-  font-size: 16px;
-  color: $white;
-  border: 0;
-  cursor: pointer;
-  outline: none;
-  transition: all 0.3s ease;
+ul.weekdays {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
 
-  &:hover {
-    color: $white;
-    background: darken($textLink, 15%);
+  li {
+    font-size: 14px;
+    padding: 20px 20px 0 0;
+    text-transform: uppercase;
+    font-family: arial, sans-serif;
+    color: $textLight;
+    letter-spacing: 1px;
   }
 }
 
@@ -118,24 +115,17 @@ ul.meal-list {
   }
 
   & > li {
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    background: $white;
-
-    &.empty .meta {
-      justify-content: center;
-    }
-
-    &:last-of-type {
-      border-right: 0;
-    }
+    padding: 20px 20px 20px 0;
   }
 
   a {
-    font-size: 14px;
-    font-weight: bold;
-    text-transform: uppercase;
+    font-size: 16px;
+    box-shadow: inset 0 -4px 0 $primary;
+    border-bottom: 1px solid $primary;
+
+    &:hover {
+      background: $primary;
+    }
   }
 
   .meta {
@@ -178,7 +168,7 @@ form {
   }
 
   button {
-    background: $textLink;
+    background: $textDark;
     text-align: center;
     padding: 10px 20px;
     border-radius: 40px;
@@ -191,7 +181,7 @@ form {
 
     &:hover {
       color: $white;
-      background: darken($textLink, 15%);
+      background: darken($textDark, 15%);
     }
   }
 }
