@@ -6,7 +6,7 @@ class DisplayAllMeals extends Component {
     return (
       <div>
         <h1>My Meals</h1>
-        <ul className="meal-list">
+        <ul className="my-meals-list">
           {this.props.meals.map(meal => {
             return (
               <Meal
