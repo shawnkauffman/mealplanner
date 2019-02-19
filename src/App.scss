@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+button {
+  padding: 0;
+}
+
 a:link,
 a:active,
 a:visited {
@@ -73,7 +77,6 @@ nav {
         font-size: 15px;
         cursor: pointer;
         color: $textDark;
-        padding: 0;
         outline: none;
         font-family: arial, sans-serif;
 
@@ -117,7 +120,7 @@ ul.meal-list {
     padding: 15px 20px 20px 0;
   }
 
-  a {
+  button {
     font-size: 16px;
     box-shadow: inset 0 -4px 0 $primary;
     margin-top: 10px;
@@ -137,7 +140,7 @@ ul.my-meals-list {
     border-radius: 5px;
   }
 
-  a {
+  button {
     font-size: 16px;
     box-shadow: inset 0 -4px 0 $primary;
     margin-top: 10px;

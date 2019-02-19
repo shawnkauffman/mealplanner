@@ -8,7 +8,7 @@ class AddNewMealForm extends Component {
     this.state = {
       id: "",
       name: "",
-      url: "",
+      recipe: "",
       ingredients: ""
     };
 
@@ -34,13 +34,13 @@ class AddNewMealForm extends Component {
 
     const newId = Math.random();
     const newName = this.state.name;
-    const newUrl = this.state.url;
+    const newRecipe = this.state.recipe;
     const newIngredients = this.state.ingredients.split(",");
 
     const meal = {
       id: newId,
       name: newName,
-      url: newUrl,
+      recipe: newRecipe,
       ingredients: newIngredients
     };
 
@@ -71,14 +71,14 @@ class AddNewMealForm extends Component {
           />
           <input
             type="text"
-            name="url"
-            placeholder="Url (http://)"
-            onChange={this.handleInputChange}
-            value={this.state.url}
-          />
-          <textarea
             name="ingredients"
             placeholder="Ingredients (separated by comma)"
+            onChange={this.handleInputChange}
+            value={this.state.ingredients}
+          />
+          <textarea
+            name="recipe"
+            placeholder="Recipe"
             onChange={this.handleInputChange}
             value={this.state.ingredients}
           />

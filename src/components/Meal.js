@@ -1,6 +1,15 @@
 import React, { Component } from "react";
 
 class Meal extends Component {
+  constructor() {
+    super();
+    this.openRecipeModal = this.openRecipeModal.bind(this);
+  }
+
+  openRecipeModal(e) {
+    e.preventDefault();
+  }
+
   render() {
     return (
       <li>
@@ -10,9 +19,9 @@ class Meal extends Component {
             return <li key={item}>{item}</li>;
           })}
         </ul>
-        <a href={this.props.url} target="_blank" className="view-recipe">
+        <button type="button" onClick={this.openRecipeModal}>
           View Recipe
-        </a>
+        </button>
       </li>
     );
   }

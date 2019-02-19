@@ -18,7 +18,7 @@ class MealList extends Component {
               <Meal
                 name={meal.name}
                 ingredients={meal.ingredients}
-                url={meal.url}
+                recipe={meal.recipe}
                 key={meal.id}
               />
             );

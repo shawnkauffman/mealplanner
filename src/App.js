@@ -24,54 +24,54 @@ class App extends Component {
       typeof localStorage["meals"] !== "undefined"
         ? JSON.parse(localStorage.getItem("meals"))
         : [
-            {
-              id: 1,
-              name: "Corned Beef & Cabbage",
-              url: "http://www.google.com",
-              ingredients: [
-                "corned beef",
-                "cabbage",
-                "vegetable broth",
-                "carrots",
-                "potatoes"
-              ]
-            },
-            {
-              id: 2,
-              name: "Pesto Pasta",
-              url: "http://www.apple.com",
-              ingredients: [
-                "Pasta",
-                "Pesto",
-                "Mozzarella",
-                "Sun dried tomatoes"
-              ]
-            },
-            {
-              id: 3,
-              name: "Tacos",
-              url: "http://www.apple.com",
-              ingredients: ["Tortillas", "Beef", "Pico de gallo", "Onions"]
-            },
-            {
-              id: 4,
-              name: "Pizza",
-              url: "http://www.apple.com",
-              ingredients: [
-                "Dough",
-                "Sauce",
-                "Cheese",
-                "Pepperoni",
-                "Mushrooms"
-              ]
-            },
-            {
-              id: 5,
-              name: "Tofu, Rice & Broccoli",
-              url: "http://www.apple.com",
-              ingredients: ["Tofu", "Brown Rice", "Soy Sauce"]
-            }
-          ];
+          {
+            id: 1,
+            name: "Corned Beef & Cabbage",
+            recipe: '',
+            ingredients: [
+              "corned beef",
+              "cabbage",
+              "vegetable broth",
+              "carrots",
+              "potatoes"
+            ]
+          },
+          {
+            id: 2,
+            name: "Pesto Pasta",
+            recipe: '',
+            ingredients: [
+              "Pasta",
+              "Pesto",
+              "Mozzarella",
+              "Sun dried tomatoes"
+            ]
+          },
+          {
+            id: 3,
+            name: "Tacos",
+            recipe: '',
+            ingredients: ["Tortillas", "Beef", "Pico de gallo", "Onions"]
+          },
+          {
+            id: 4,
+            name: "Pizza",
+            recipe: '',
+            ingredients: [
+              "Dough",
+              "Sauce",
+              "Cheese",
+              "Pepperoni",
+              "Mushrooms"
+            ]
+          },
+          {
+            id: 5,
+            name: "Tofu, Rice & Broccoli",
+            recipe: '',
+            ingredients: ["Tofu", "Brown Rice", "Soy Sauce"]
+          }
+        ];
 
     this.setState({
       meals: meals
