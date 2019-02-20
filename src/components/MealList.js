@@ -5,13 +5,6 @@ class MealList extends Component {
   render() {
     return (
       <div>
-        <ul className="weekdays">
-          <li>Monday</li>
-          <li>Tuesday</li>
-          <li>Wednesday</li>
-          <li>Thursday</li>
-          <li>Friday</li>
-        </ul>
         <ul className="meal-list">
           {this.props.meals.slice(0, 5).map(meal => {
             return (

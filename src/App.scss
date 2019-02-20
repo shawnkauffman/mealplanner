@@ -8,31 +8,26 @@
   box-sizing: border-box;
 }
 
-button {
-  padding: 0;
-}
-
 a:link,
 a:active,
 a:visited {
   text-decoration: none;
-  color: $textDark;
-  transition: all 0.3s ease;
-
-  &:hover {
-    background: $primary;
-  }
+  color: $purple;
 }
 
 button {
   background: inherit;
   border: 0;
+  padding: 0;
+  margin: 0;
+  outline: none;
 }
 
 body {
-  color: $textDark;
+  color: #675b64;
   font-size: 18px;
   font-family: "Karla", sans-serif;
+  background: $yellow;
 }
 
 p {
@@ -40,9 +35,10 @@ p {
 }
 
 a.logo {
-  font-size: 24px;
+  font-size: 26px;
   font-family: "Rubik", sans-serif;
   font-weight: bold;
+  padding: 2px 4px;
 }
 
 h1 {
@@ -55,20 +51,30 @@ h2 {
   font-size: 24px;
   line-height: 26px;
   font-weight: 900;
+  color: $purple;
 }
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
+  margin-bottom: 10px;
+  padding: 15px 20px;
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+  }
 }
 
 section {
-  padding: 0 40px;
+  padding: 0 20px;
 }
 
 nav {
+  @media (max-width: 1000px) {
+    margin-top: 15px;
+  }
+
   ul {
     display: flex;
     align-items: baseline;
@@ -76,17 +82,19 @@ nav {
     li {
       margin: 0 15px;
 
+      @media (max-width: 1000px) {
+        margin: 0 10px;
+      }
+
       a,
       button {
         font-size: 15px;
         cursor: pointer;
-        color: $textDark;
-        outline: none;
+        color: $purple;
         font-family: arial, sans-serif;
-
-        &:hover {
-          background: $primary;
-        }
+        padding-bottom: 2px;
+        line-height: 1;
+        transition: all 0.3s ease;
       }
 
       &:last-of-type {
@@ -96,47 +104,91 @@ nav {
   }
 }
 
-ul.weekdays {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 20px;
-
-  li {
-    font-size: 14px;
-    padding: 20px 20px 0 0;
-    text-transform: uppercase;
-    font-family: arial, sans-serif;
-    color: $textMedium;
-    letter-spacing: 1px;
-    padding-bottom: 15px;
-    width: 40%;
-    border-bottom: 3px solid #444;
-  }
-}
-
 ul.meal-list {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-gap: 20px;
+  grid-auto-flow: column;
+  grid-gap: 10px;
 
-  @media (max-width: 460px) {
+  @media (max-width: 1000px) {
     grid-template-columns: 1fr;
+    grid-auto-flow: row;
   }
 
   & > li {
-    padding: 15px 20px 20px 0;
+    padding: 15px 20px;
+    background: #fff;
+    border: 3px solid $purple;
+    position: relative;
+    border-radius: 10px;
+
+    &.current-day,
+    &:nth-child(3) {
+      grid-column: span 2;
+
+      @media (max-width: 1000px) {
+        grid-column: auto;
+      }
+    }
+
+    &:nth-child(1)::before {
+      content: 'Monday';
+    }
+
+    &:nth-child(2)::before {
+      content: 'Tuesday';
+    }
+
+    &:nth-child(3)::before {
+      content: 'Wednesday';
+    }
+
+    &:nth-child(4)::before {
+      content: 'Thursday';
+    }
+
+    &:nth-child(5)::before {
+      content: 'Friday';
+    }
+
+    &::before {
+      font-size: 16px;
+      padding: 0px 10px 5px 10px;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: #f14701;
+      border-bottom: 3px solid $purple;
+      position: absolute;
+      right: 0;
+      text-align: center;
+      width: auto;
+
+      @media (max-width: 1000px) {
+        left: 0;
+        right: auto;
+      }
+    }
+  }
+
+  h2 {
+    margin-top: 45px;
   }
 
   button {
-    font-size: 16px;
-    box-shadow: inset 0 -4px 0 $primary;
+    font-size: 13px;
+    box-shadow: 3px 3px 0 $purple;
     margin-top: 10px;
+    padding: 5px 10px;
     display: inline-block;
-    border-bottom: 1px solid $primary;
+    background: $yellow;
+    text-transform: uppercase;
+    font-weight: bold;
     cursor: pointer;
+    color: $purple;
 
     &:hover {
-      background: $primary;
+      background: $purple;
+      color: $yellow;
     }
   }
 }
@@ -150,14 +202,6 @@ ul.my-meals-list {
     padding: 15px 20px 20px 20px;
     border: 2px solid;
     border-radius: 5px;
-  }
-
-  button {
-    font-size: 16px;
-    box-shadow: inset 0 -4px 0 $primary;
-    margin-top: 10px;
-    display: inline-block;
-    border-bottom: 1px solid $primary;
   }
 }
 
@@ -204,9 +248,5 @@ form {
     cursor: pointer;
     outline: none;
     transition: all 0.3s ease;
-
-    &:hover {
-      background: $primary;
-    }
   }
 }
