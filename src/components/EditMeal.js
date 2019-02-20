@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
-class AddMeal extends Component {
+class EditMeal extends Component {
   constructor(props) {
     super(props);
+
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
 
     this.state = {
       id: "",
@@ -11,9 +14,6 @@ class AddMeal extends Component {
       recipe: "",
       ingredients: ""
     };
-
-    this.handleFormSubmit = this.handleFormSubmit.bind(this);
-    this.handleInputChange = this.handleInputChange.bind(this);
   }
 
   handleInputChange(e) {
@@ -26,19 +26,14 @@ class AddMeal extends Component {
     e.preventDefault();
     const modal = document.getElementById("modal");
 
-    const newId = Math.random();
-    const newName = this.state.name;
-    const newRecipe = this.state.recipe;
-    const newIngredients = this.state.ingredients.split(",");
-
     const meal = {
-      id: newId,
-      name: newName,
-      recipe: newRecipe,
-      ingredients: newIngredients
+      id: this.props.id,
+      name: this.props.name,
+      recipe: this.props.recipe,
+      ingredients: this.props.ingredients
     };
 
-    this.props.addMeal(meal);
+    this.props.editMeal(meal);
 
     ReactDOM.unmountComponentAtNode(modal);
     modal.classList.remove("active");
@@ -47,7 +42,7 @@ class AddMeal extends Component {
   render() {
     return (
       <div className="modal-inner">
-        <h1>Add a Meal</h1>
+        <h1>Edit Meal</h1>
         <button
           type="button"
           className="modal-close-button"
@@ -76,11 +71,11 @@ class AddMeal extends Component {
             onChange={this.handleInputChange}
             value={this.state.recipe}
           />
-          <button type="submit">Add Meal</button>
+          <button type="submit">Edit Meal</button>
         </form>
       </div>
     );
   }
 }
 
-export default AddMeal;
+export default EditMeal;

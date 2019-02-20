@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import MealList from "./components/MealList";
 import DisplayAllMeals from "./components/DisplayAllMeals";
 import AddMeal from "./components/AddMeal";
+import EditMeal from "./components/EditMeal";
 
 class App extends Component {
   constructor(props) {
@@ -14,7 +15,9 @@ class App extends Component {
     this.state = {
       meals: []
     };
+    this.editMeal = this.editMeal.bind(this);
     this.addMeal = this.addMeal.bind(this);
+    this.openEditMealForm = this.openEditMealForm.bind(this);
     this.openAddMealForm = this.openAddMealForm.bind(this);
     this.generateNewMealPlan = this.generateNewMealPlan.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -25,54 +28,54 @@ class App extends Component {
       typeof localStorage["meals"] !== "undefined"
         ? JSON.parse(localStorage.getItem("meals"))
         : [
-            {
-              id: 1,
-              name: "Corned Beef & Cabbage",
-              recipe: "Step 1: Boil potatoes, Step 2: ",
-              ingredients: [
-                "corned beef",
-                "cabbage",
-                "vegetable broth",
-                "carrots",
-                "potatoes"
-              ]
-            },
-            {
-              id: 2,
-              name: "Pesto Pasta",
-              recipe: "",
-              ingredients: [
-                "Pasta",
-                "Pesto",
-                "Mozzarella",
-                "Sun dried tomatoes"
-              ]
-            },
-            {
-              id: 3,
-              name: "Tacos",
-              recipe: "",
-              ingredients: ["Tortillas", "Beef", "Pico de gallo", "Onions"]
-            },
-            {
-              id: 4,
-              name: "Pizza",
-              recipe: "",
-              ingredients: [
-                "Dough",
-                "Sauce",
-                "Cheese",
-                "Pepperoni",
-                "Mushrooms"
-              ]
-            },
-            {
-              id: 5,
-              name: "Tofu, Rice & Broccoli",
-              recipe: "",
-              ingredients: ["Tofu", "Brown Rice", "Soy Sauce"]
-            }
-          ];
+          {
+            id: 1,
+            name: "Corned Beef & Cabbage",
+            recipe: "Step 1: Boil potatoes, Step 2: ",
+            ingredients: [
+              "corned beef",
+              "cabbage",
+              "vegetable broth",
+              "carrots",
+              "potatoes"
+            ]
+          },
+          {
+            id: 2,
+            name: "Pesto Pasta",
+            recipe: "",
+            ingredients: [
+              "Pasta",
+              "Pesto",
+              "Mozzarella",
+              "Sun dried tomatoes"
+            ]
+          },
+          {
+            id: 3,
+            name: "Tacos",
+            recipe: "",
+            ingredients: ["Tortillas", "Beef", "Pico de gallo", "Onions"]
+          },
+          {
+            id: 4,
+            name: "Pizza",
+            recipe: "",
+            ingredients: [
+              "Dough",
+              "Sauce",
+              "Cheese",
+              "Pepperoni",
+              "Mushrooms"
+            ]
+          },
+          {
+            id: 5,
+            name: "Tofu, Rice & Broccoli",
+            recipe: "",
+            ingredients: ["Tofu", "Brown Rice", "Soy Sauce"]
+          }
+        ];
 
     this.setState({
       meals: meals
@@ -102,10 +105,33 @@ class App extends Component {
     );
   }
 
+  openEditMealForm() {
+    document.getElementById("modal").classList.add("active");
+    ReactDOM.render(
+      <EditMeal
+        editMeal={this.editMeal}
+        meals={this.state.meals}
+        closeModal={this.closeModal}
+      />,
+      document.getElementById("modal")
+    );
+  }
+
   closeModal() {
     const modal = document.getElementById("modal");
     ReactDOM.unmountComponentAtNode(modal);
     modal.classList.remove("active");
+  }
+
+  editMeal(newMeal) {
+    const meals = this.state.meals;
+
+    meals.push(newMeal);
+    localStorage.setItem("meals", JSON.stringify(meals));
+
+    this.setState({
+      meals: meals
+    });
   }
 
   shuffle(array) {
@@ -149,6 +175,7 @@ class App extends Component {
               path="/"
               meals={this.state.meals}
               closeModal={this.closeModal}
+              openEditMealForm={this.openEditMealForm}
             />
             <DisplayAllMeals
               path="/meals/"

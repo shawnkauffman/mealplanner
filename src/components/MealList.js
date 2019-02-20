@@ -14,6 +14,8 @@ class MealList extends Component {
                 recipe={meal.recipe}
                 key={meal.id}
                 closeModal={this.props.closeModal}
+                editMeal={this.props.editMeal}
+                openEditMealForm={this.props.openEditMealForm}
               />
             );
           })}

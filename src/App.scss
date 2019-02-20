@@ -106,30 +106,19 @@ nav {
 
 ul.meal-list {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-auto-flow: column;
+  grid-template-columns: repeat(5, minmax(200px, 1fr));
   grid-gap: 10px;
 
   @media (max-width: 1000px) {
     grid-template-columns: 1fr;
-    grid-auto-flow: row;
   }
 
   & > li {
-    padding: 15px 20px;
+    padding: 15px 20px 20px 20px;
     background: #fff;
     border: 3px solid $purple;
     position: relative;
     border-radius: 10px;
-
-    &.current-day,
-    &:nth-child(3) {
-      grid-column: span 2;
-
-      @media (max-width: 1000px) {
-        grid-column: auto;
-      }
-    }
 
     &:nth-child(1)::before {
       content: 'Monday';
@@ -174,7 +163,22 @@ ul.meal-list {
     margin-top: 45px;
   }
 
-  button {
+  .edit-recipe {
+    cursor: pointer;
+    color: $purple;
+    font-size: 14px;
+    position: absolute;
+    left: 20px;
+    top: 14px;
+    border-bottom: 1px dashed #782161;
+    cursor: pointer;
+
+    &:hover {
+      border-bottom: 0;
+    }
+  }
+
+  .view-recipe {
     font-size: 13px;
     box-shadow: 3px 3px 0 $purple;
     margin-top: 10px;
