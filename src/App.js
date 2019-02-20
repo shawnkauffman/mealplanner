@@ -17,6 +17,7 @@ class App extends Component {
     this.addMeal = this.addMeal.bind(this);
     this.openAddMealForm = this.openAddMealForm.bind(this);
     this.generateNewMealPlan = this.generateNewMealPlan.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   componentDidMount() {
@@ -24,54 +25,54 @@ class App extends Component {
       typeof localStorage["meals"] !== "undefined"
         ? JSON.parse(localStorage.getItem("meals"))
         : [
-          {
-            id: 1,
-            name: "Corned Beef & Cabbage",
-            recipe: '',
-            ingredients: [
-              "corned beef",
-              "cabbage",
-              "vegetable broth",
-              "carrots",
-              "potatoes"
-            ]
-          },
-          {
-            id: 2,
-            name: "Pesto Pasta",
-            recipe: '',
-            ingredients: [
-              "Pasta",
-              "Pesto",
-              "Mozzarella",
-              "Sun dried tomatoes"
-            ]
-          },
-          {
-            id: 3,
-            name: "Tacos",
-            recipe: '',
-            ingredients: ["Tortillas", "Beef", "Pico de gallo", "Onions"]
-          },
-          {
-            id: 4,
-            name: "Pizza",
-            recipe: '',
-            ingredients: [
-              "Dough",
-              "Sauce",
-              "Cheese",
-              "Pepperoni",
-              "Mushrooms"
-            ]
-          },
-          {
-            id: 5,
-            name: "Tofu, Rice & Broccoli",
-            recipe: '',
-            ingredients: ["Tofu", "Brown Rice", "Soy Sauce"]
-          }
-        ];
+            {
+              id: 1,
+              name: "Corned Beef & Cabbage",
+              recipe: "Step 1: Boil potatoes, Step 2: ",
+              ingredients: [
+                "corned beef",
+                "cabbage",
+                "vegetable broth",
+                "carrots",
+                "potatoes"
+              ]
+            },
+            {
+              id: 2,
+              name: "Pesto Pasta",
+              recipe: "",
+              ingredients: [
+                "Pasta",
+                "Pesto",
+                "Mozzarella",
+                "Sun dried tomatoes"
+              ]
+            },
+            {
+              id: 3,
+              name: "Tacos",
+              recipe: "",
+              ingredients: ["Tortillas", "Beef", "Pico de gallo", "Onions"]
+            },
+            {
+              id: 4,
+              name: "Pizza",
+              recipe: "",
+              ingredients: [
+                "Dough",
+                "Sauce",
+                "Cheese",
+                "Pepperoni",
+                "Mushrooms"
+              ]
+            },
+            {
+              id: 5,
+              name: "Tofu, Rice & Broccoli",
+              recipe: "",
+              ingredients: ["Tofu", "Brown Rice", "Soy Sauce"]
+            }
+          ];
 
     this.setState({
       meals: meals
@@ -92,9 +93,19 @@ class App extends Component {
   openAddMealForm() {
     document.getElementById("modal").classList.add("active");
     ReactDOM.render(
-      <AddMeal addMeal={this.addMeal} meals={this.state.meals} />,
+      <AddMeal
+        addMeal={this.addMeal}
+        meals={this.state.meals}
+        closeModal={this.closeModal}
+      />,
       document.getElementById("modal")
     );
+  }
+
+  closeModal() {
+    const modal = document.getElementById("modal");
+    ReactDOM.unmountComponentAtNode(modal);
+    modal.classList.remove("active");
   }
 
   shuffle(array) {
@@ -134,8 +145,16 @@ class App extends Component {
         />
         <section>
           <Router>
-            <MealList path="/" meals={this.state.meals} />
-            <DisplayAllMeals path="/meals/" meals={this.state.meals} />
+            <MealList
+              path="/"
+              meals={this.state.meals}
+              closeModal={this.closeModal}
+            />
+            <DisplayAllMeals
+              path="/meals/"
+              meals={this.state.meals}
+              closeModal={this.closeModal}
+            />
           </Router>
         </section>
         <Footer />

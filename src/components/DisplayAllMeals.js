@@ -14,6 +14,7 @@ class DisplayAllMeals extends Component {
                 ingredients={meal.ingredients}
                 recipe={meal.recipe}
                 key={meal.id}
+                closeModal={this.props.closeModal}
               />
             );
           })}

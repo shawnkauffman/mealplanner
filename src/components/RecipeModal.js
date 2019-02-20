@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Recipe extends Component {
   render() {
     return (
-      <div className="modal--inner">
+      <div className="modal-inner">
         <h1>{this.props.name}</h1>
         <button
           type="button"
@@ -12,12 +12,12 @@ class Recipe extends Component {
         >
           &times;
         </button>
-        <div>
-          {this.props.ingredients}
-        </div>
-        <div>
-          {this.props.recipe}
-        </div>
+        <ul className="ingredient-list">
+          {this.props.ingredients.map(item => {
+            return <li key={item}>{item}</li>;
+          })}
+        </ul>
+        <p>{this.props.recipe}</p>
       </div>
     );
   }

@@ -16,12 +16,6 @@ class AddNewMealForm extends Component {
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
-  closeAddNewMealForm() {
-    const modal = document.getElementById("modal");
-    ReactDOM.unmountComponentAtNode(modal);
-    modal.classList.remove("active");
-  }
-
   handleInputChange(e) {
     this.setState({
       [e.currentTarget.name]: e.currentTarget.value
@@ -52,12 +46,12 @@ class AddNewMealForm extends Component {
 
   render() {
     return (
-      <div className="modal--inner">
+      <div className="modal-inner">
         <h1>Add a Meal</h1>
         <button
           type="button"
-          className="modal--close-button"
-          onClick={this.closeAddNewMealForm}
+          className="modal-close-button"
+          onClick={this.props.closeModal}
         >
           &times;
         </button>
@@ -80,7 +74,7 @@ class AddNewMealForm extends Component {
             name="recipe"
             placeholder="Recipe"
             onChange={this.handleInputChange}
-            value={this.state.ingredients}
+            value={this.state.recipe}
           />
           <button type="submit">Add Meal</button>
         </form>

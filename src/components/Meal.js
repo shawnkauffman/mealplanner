@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import ReactDOM from "react-dom";
+import RecipeModal from "./RecipeModal";
 
 class Meal extends Component {
   constructor() {
@@ -8,6 +10,17 @@ class Meal extends Component {
 
   openRecipeModal(e) {
     e.preventDefault();
+    document.getElementById("modal").classList.add("active");
+
+    ReactDOM.render(
+      <RecipeModal
+        name={this.props.name}
+        ingredients={this.props.ingredients}
+        recipe={this.props.recipe}
+        closeModal={this.props.closeModal}
+      />,
+      document.getElementById("modal")
+    );
   }
 
   render() {

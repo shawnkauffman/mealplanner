@@ -16,7 +16,8 @@
   }
 }
 
-.modal--inner {
+.modal-inner {
+  min-width: 40%;
   transform: translate(-50%, -50%);
   background: $white;
   top: 50%;
@@ -32,7 +33,7 @@
   }
 }
 
-.modal--close-button {
+.modal-close-button {
   cursor: pointer;
   color: $iconLight;
   font-size: 24px;
