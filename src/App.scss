@@ -42,7 +42,7 @@ a.logo {
 }
 
 h1 {
-  font-size: 42px;
+  font-size: 34px;
   font-weight: bold;
   margin: 20px 0;
 }
@@ -121,23 +121,23 @@ ul.meal-list {
     border-radius: 10px;
 
     &:nth-child(1)::before {
-      content: 'Monday';
+      content: "Monday";
     }
 
     &:nth-child(2)::before {
-      content: 'Tuesday';
+      content: "Tuesday";
     }
 
     &:nth-child(3)::before {
-      content: 'Wednesday';
+      content: "Wednesday";
     }
 
     &:nth-child(4)::before {
-      content: 'Thursday';
+      content: "Thursday";
     }
 
     &:nth-child(5)::before {
-      content: 'Friday';
+      content: "Friday";
     }
 
     &::before {
@@ -175,6 +175,11 @@ ul.meal-list {
 
     &:hover {
       border-bottom: 0;
+    }
+
+    @media (max-width: 1000px) {
+      right: 14px;
+      left: auto;
     }
   }
 

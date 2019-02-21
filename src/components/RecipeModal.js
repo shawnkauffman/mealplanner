@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Recipe extends Component {
   render() {
     return (
-      <div className="modal-inner">
+      <div className="modal-content">
         <h1>{this.props.name}</h1>
         <button
           type="button"

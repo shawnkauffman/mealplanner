@@ -46,7 +46,7 @@ class AddMeal extends Component {
 
   render() {
     return (
-      <div className="modal-inner">
+      <div className="modal-content">
         <h1>Add a Meal</h1>
         <button
           type="button"

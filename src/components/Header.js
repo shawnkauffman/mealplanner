@@ -23,7 +23,7 @@ class Header extends Component {
                 onClick={this.props.generateNewMealPlan}
                 className="generate-btn"
               >
-                Generate New Meal Plan
+                Generate
               </button>
             </li>
           </ul>
