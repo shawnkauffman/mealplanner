@@ -119,6 +119,8 @@ ul.meal-list {
     border: 3px solid $purple;
     position: relative;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
 
     &:nth-child(1)::before {
       content: "Monday";
@@ -186,8 +188,8 @@ ul.meal-list {
   .view-recipe {
     font-size: 13px;
     box-shadow: 3px 3px 0 $purple;
-    margin-top: 10px;
-    padding: 5px 10px;
+    margin-top: auto;
+    padding: 10px;
     display: inline-block;
     background: $yellow;
     text-transform: uppercase;
@@ -216,7 +218,10 @@ ul.my-meals-list {
 
 ul.ingredient-list {
   list-style-type: circle;
-  margin-left: 20px;
+  max-height: 200px;
+  overflow-y: auto;
+  padding-left: 20px;
+  margin: 0 0 20px 0;
 
   li {
     margin: 10px 0;
