@@ -32,11 +32,19 @@ class Meal extends Component {
             return <li key={item}>{item}</li>;
           })}
         </ul>
-        <button type="button" className="view-recipe" onClick={this.openRecipeModal}>
+        <button
+          type="button"
+          className="view-recipe"
+          onClick={this.openRecipeModal}
+        >
           View Recipe
         </button>
-        <button type="button" className="edit-recipe" onClick={this.props.openEditMealForm}>
-          Edit
+        <button
+          type="button"
+          className="remove-recipe"
+          onClick={() => this.props.removeMeal(this.props.name)}
+        >
+          &times;
         </button>
       </li>
     );

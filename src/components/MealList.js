@@ -6,7 +6,7 @@ class MealList extends Component {
     return (
       <div>
         <ul className="meal-list">
-          {this.props.meals.slice(0, 5).map(meal => {
+          {this.props.meals.map(meal => {
             return (
               <Meal
                 name={meal.name}
@@ -14,8 +14,7 @@ class MealList extends Component {
                 recipe={meal.recipe}
                 key={meal.id}
                 closeModal={this.props.closeModal}
-                editMeal={this.props.editMeal}
-                openEditMealForm={this.props.openEditMealForm}
+                removeMeal={this.props.removeMeal}
               />
             );
           })}

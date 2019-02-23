@@ -12,7 +12,7 @@ a:link,
 a:active,
 a:visited {
   text-decoration: none;
-  color: $purple;
+  color: #fff;
 }
 
 button {
@@ -23,11 +23,15 @@ button {
   outline: none;
 }
 
+strong {
+  font-weight: bold;
+}
+
 body {
   color: #675b64;
   font-size: 18px;
   font-family: "Karla", sans-serif;
-  background: $yellow;
+  background: $gray;
 }
 
 p {
@@ -45,13 +49,17 @@ h1 {
   font-size: 34px;
   font-weight: bold;
   margin: 20px 0;
+
+  @media (max-width: 1000px) {
+    font-size: 28px;
+  }
 }
 
 h2 {
   font-size: 24px;
   line-height: 26px;
   font-weight: 900;
-  color: $purple;
+  color: #555;
 }
 
 header {
@@ -90,7 +98,7 @@ nav {
       button {
         font-size: 15px;
         cursor: pointer;
-        color: $purple;
+        color: #fff;
         font-family: arial, sans-serif;
         padding-bottom: 2px;
         line-height: 1;
@@ -116,90 +124,46 @@ ul.meal-list {
   & > li {
     padding: 15px 20px 20px 20px;
     background: #fff;
-    border: 3px solid $purple;
+    border: 3px solid #50545f;
     position: relative;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-
-    &:nth-child(1)::before {
-      content: "Monday";
-    }
-
-    &:nth-child(2)::before {
-      content: "Tuesday";
-    }
-
-    &:nth-child(3)::before {
-      content: "Wednesday";
-    }
-
-    &:nth-child(4)::before {
-      content: "Thursday";
-    }
-
-    &:nth-child(5)::before {
-      content: "Friday";
-    }
-
-    &::before {
-      font-size: 16px;
-      padding: 0px 10px 5px 10px;
-      text-transform: uppercase;
-      font-weight: bold;
-      color: #f14701;
-      border-bottom: 3px solid $purple;
-      position: absolute;
-      right: 0;
-      text-align: center;
-      width: auto;
-
-      @media (max-width: 1000px) {
-        left: 0;
-        right: auto;
-      }
-    }
   }
 
   h2 {
-    margin-top: 45px;
+    margin-top: 15px;
   }
 
-  .edit-recipe {
+  .remove-recipe {
     cursor: pointer;
-    color: $purple;
-    font-size: 14px;
+    color: #a7a7a7;
+    font-size: 28px;
     position: absolute;
-    left: 20px;
-    top: 14px;
-    border-bottom: 1px dashed #782161;
+    right: 10px;
+    top: 0;
     cursor: pointer;
 
     &:hover {
-      border-bottom: 0;
-    }
-
-    @media (max-width: 1000px) {
-      right: 14px;
-      left: auto;
+      color: #797979;
     }
   }
 
   .view-recipe {
-    font-size: 13px;
-    box-shadow: 3px 3px 0 $purple;
-    margin-top: auto;
-    padding: 10px;
+    font-size: 16px;
+    padding: 12px;
+    margin: auto -20px -20px -20px;
+    border-radius: 0 0 7px 6px;
     display: inline-block;
-    background: $yellow;
+    background: $blue;
     text-transform: uppercase;
     font-weight: bold;
     cursor: pointer;
-    color: $purple;
+    color: #fff;
+    transition: all 0.3s ease;
 
     &:hover {
-      background: $purple;
-      color: $yellow;
+      background: #416fef;
     }
   }
 }

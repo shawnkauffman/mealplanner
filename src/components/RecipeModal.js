@@ -12,12 +12,18 @@ class Recipe extends Component {
         >
           &times;
         </button>
+        <strong>Ingredients:</strong>
+        <br />
         <ul className="ingredient-list">
           {this.props.ingredients.map(item => {
             return <li key={item}>{item}</li>;
           })}
         </ul>
-        <p>{this.props.recipe}</p>
+        <p>
+          <strong>Instructions:</strong>
+          <br />
+          {this.props.recipe}
+        </p>
       </div>
     );
   }
