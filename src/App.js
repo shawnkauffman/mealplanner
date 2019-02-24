@@ -27,14 +27,21 @@ class App extends Component {
         : [
             {
               id: 1,
-              name: "Corned Beef & Cabbage",
-              recipe: "Step 1: Boil potatoes, Step 2: ",
+              name: "Vegetable Lasagna",
+              recipe: "https://wendypolisi.com/veggie-lasagna/",
               ingredients: [
-                "corned beef",
-                "cabbage",
-                "vegetable broth",
-                "carrots",
-                "potatoes"
+                "1 pound zucchini trimmed and sliced thin lengthwise",
+                "9 ounces fresh spinach chopped",
+                "24 ounces ricotta cheese",
+                "3 ounces parmesan",
+                "1 egg beaten",
+                "2 teaspoons minced garlic",
+                "1 / 4 cup fresh basil",
+                "1 / 4 cup fresh parsley",
+                "1 / 2 teaspoon crushed red pepper",
+                "24 ounces marinara",
+                "12 ounces part - skim mozzarella",
+                "12 ounces lasagna noodles cooked according to package directions"
               ]
             },
             {
@@ -50,27 +57,63 @@ class App extends Component {
             },
             {
               id: 3,
-              name: "Tacos",
-              recipe: "",
-              ingredients: ["Tortillas", "Beef", "Pico de gallo", "Onions"]
+              name: "Lemon Garlic Butter Shrimp with Asparagus",
+              recipe:
+                "https://www.withpeanutbutterontop.com/lemon-garlic-butter-shrimp-with-asparagus/",
+              ingredients: [
+                "1.5 lbs medium raw shrimp(peeled and deveined",
+                "2 tbsp butter",
+                "1 tbsp minced garlic",
+                "1 tsp italian seasoning",
+                "1 / 4 tsp onion powder",
+                "1 / 4 tsp paprika",
+                "1 tbsp butter",
+                "1 tbsp olive oil",
+                "1 lb asparagus"
+              ]
             },
             {
               id: 4,
-              name: "Pizza",
-              recipe: "",
+              name: "Indian Butter Chicken",
+              recipe:
+                "https://www.savorytooth.com/butter-chicken/?utm_source=pinterest&utm_medium=social&utm_campaign=2",
               ingredients: [
-                "Dough",
-                "Sauce",
-                "Cheese",
-                "Pepperoni",
-                "Mushrooms"
+                "1 1/2 pounds boneless skinless chicken breasts (about 3)",
+                "7 ounces plain 2 % fat greek yogurt",
+                "1 tablespoon lemon juice",
+                "2 teaspoons garam masala",
+                "15 ounces canned tomato sauce or puree",
+                "2 cups heavy whipping cream",
+                "5 cloves garlic minced",
+                "4 tablespoons salted butter",
+                "2 teaspoons garam masala",
+                "1 teaspoon paprika",
+                "1 / 8 teaspoon cayenne",
+                "white rice"
               ]
             },
             {
               id: 5,
               name: "Tofu, Rice & Broccoli",
               recipe: "",
-              ingredients: ["Tofu", "Brown Rice", "Soy Sauce"]
+              ingredients: ["Tofu", "Brown Rice", "Soy Sauce", "broccoli"]
+            },
+            {
+              id: 6,
+              name: "Black Bean & Sweet Potato Tacos",
+              recipe:
+                "https://www.evolvingtable.com/black-bean-sweet-potato-tacos-vegetarian/",
+              ingredients: [
+                "4 cups sweet potatoes peeled, cut into 1/2-inch cubes",
+                "2 - 3 tbsp olive oil",
+                "1 small sweet onion finely diced",
+                "2 cloves garlic crushed",
+                "1/2 tsp salt",
+                "1/4 tsp pepper",
+                "1 cup refried black beans",
+                "8 corn tortillas",
+                "1/2 cup cheese"
+              ]
             }
           ];
 
